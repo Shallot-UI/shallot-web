@@ -9,6 +9,7 @@ import {
   LineHeightProps,
   RadiusProps,
   SizingProps,
+  UnitPaddingProps,
 } from '@shallot-ui/theme'
 
 import {
@@ -20,6 +21,7 @@ import {
   getUnitsAround,
   getRadius,
 } from '../../props'
+import { getUnitPadding } from '../../props/UnitsPadding'
 
 interface InputStateProps
   extends UnitsAroundProps,
@@ -29,7 +31,8 @@ interface InputStateProps
     FontSizeProps,
     LineHeightProps,
     RadiusProps,
-    SizingProps {}
+    SizingProps,
+    UnitPaddingProps {}
 
 interface BaseInputProps {
   ref?: Ref<HTMLInputElement>
@@ -49,6 +52,7 @@ const getStyles = (props: InputStateProps = {}) => css`
   ${getFontSize(props)}
   ${getLineHeight(props)}
   ${getRadius(props)}
+  ${getUnitPadding(props)}
 `
 
 const getStateStyles = (state?: string) => (
