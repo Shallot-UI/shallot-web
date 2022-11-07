@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLProps } from 'react'
+import React, { FunctionComponent, HTMLProps, ReactNode } from 'react'
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 import {
   UnitsAroundProps,
@@ -39,6 +39,10 @@ export interface ButtonProps
   extends Omit<TextProps, 'as'>,
     Omit<HTMLProps<HTMLButtonElement>, 'style' | 'height' | 'width'> {
   title: string
+  type: 'button' | 'submit' | 'reset' | undefined
+
+  leftDecoration?: ReactNode
+  rightDecoration?: ReactNode
 }
 
 const Label = styled.span``
@@ -78,9 +82,15 @@ export const Button: FunctionComponent<ButtonProps & ButtonStyleProps> = ({
   title,
   as,
   ref,
+
+  leftDecoration,
+  rightDecoration,
+
   ...rest
 }) => (
   <Container {...rest}>
+    {leftDecoration}
     <Label>{title}</Label>
+    {rightDecoration}
   </Container>
 )
