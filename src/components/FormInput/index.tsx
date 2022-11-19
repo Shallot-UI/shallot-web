@@ -122,6 +122,8 @@ export const FormInput: FunctionComponent<FormInputProps &
   ref,
   as,
 
+  value,
+
   onFocus,
   onBlur,
 
@@ -154,13 +156,11 @@ export const FormInput: FunctionComponent<FormInputProps &
   disabled,
   required,
 
-  initialValue = '',
   children,
 
   ...rest
 }) => {
   const [focused, setFocused] = useState(false)
-  const [value, setValue] = useState(initialValue)
 
   const handleFocus = useCallback((e: any) => {
     setFocused(true)
@@ -207,7 +207,6 @@ export const FormInput: FunctionComponent<FormInputProps &
       <Input
         {...rest}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
         onFocus={handleFocus}
         onBlur={handleBlur}
         disabled={disabled}

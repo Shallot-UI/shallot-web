@@ -27,7 +27,7 @@ const Form = () => (
         helperText="This is my input"
         unitsBelow={2}
         placeholder="Enter your email"
-        initialValue="test@gmail..com"
+        value="test@gmail..com"
         errorText="Please enter a valid email address"
       />
       <FormInput
