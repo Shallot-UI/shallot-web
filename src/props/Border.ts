@@ -1,10 +1,33 @@
 import { BorderProps } from '@shallot-ui/theme'
 
-export const getBorder = ({ borderWidth, borderColor }: BorderProps) => () => {
+const renderBorder = (
+  width = 0,
+  position: BorderProps['borderPosition'] = 'all',
+) => {
+  if (position === 'all') {
+    return `border-width: ${width}px;`
+  }
+  return `
+    border-width: 0;
+    border-${position}-width: ${width}px;
+  `
+}
+
+export const getBorder = ({
+  borderWidth,
+  borderPosition,
+  borderColor = 'transparent',
+}: BorderProps) => () => {
   if (borderWidth) {
-    return `border-width: ${borderWidth}px;`
+    return `
+      ${renderBorder(borderWidth, borderPosition)}
+      border-color: ${borderColor};
+    `
   } else if (borderColor) {
-    return 'border-width: 1px;'
+    return `
+      ${renderBorder(1, borderPosition)}
+      border-color: ${borderColor};
+    `
   }
 
   return ''

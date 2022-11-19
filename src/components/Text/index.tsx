@@ -13,6 +13,7 @@ import {
   FlexProps,
   LetterSpacingProps,
   TransitionProps,
+  AnimationProps,
 } from '@shallot-ui/theme'
 
 import {
@@ -29,6 +30,7 @@ import {
   getLetterSpacing,
   getTransition,
 } from '../../props'
+import { getAnimation } from '../../props/Animation'
 
 export interface TextStyleProps
   extends UnitsAroundProps,
@@ -42,7 +44,8 @@ export interface TextStyleProps
     SizingProps,
     FlexProps,
     LetterSpacingProps,
-    TransitionProps {}
+    TransitionProps,
+    AnimationProps {}
 
 export interface TextProps {
   as?: keyof JSX.IntrinsicElements
@@ -63,6 +66,7 @@ export const getTextStyle = (props: TextStyleProps = {}) => css`
   ${getSizing(props)}
   ${getLetterSpacing(props)}
   ${getTransition(props)}
+  ${getAnimation(props)}
 `
 
 export const Text = styled.span<TextStyleProps>`

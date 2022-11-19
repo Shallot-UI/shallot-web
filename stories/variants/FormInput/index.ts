@@ -1,0 +1,48 @@
+import { FormInputStyleProps } from '../../../src/components'
+
+export const defaultFormInputVariant: FormInputStyleProps = {
+  labelProps: {
+    textColor: 'Shading.400',
+    letterSpacing: 'sm',
+    font: 'Medium',
+    unitsBelow: 1,
+  },
+  inputProps: {
+    fontSize: 'sm',
+    textColor: 'Shading.500',
+    backgroundColor: 'Shading.100',
+    borderColor: 'Shading.250',
+    unitPadding: 1,
+    radius: 'sm',
+  },
+  helperTextProps: {
+    fontSize: 'sm',
+    textColor: 'Shading.275',
+    unitsAbove: 1 / 2,
+  },
+  errorTextProps: {
+    fontSize: 'sm',
+    textColor: 'Danger.300',
+    unitsAbove: 1 / 2,
+    animation: 'fadeInDown',
+  },
+  states: {
+    error: {
+      inputProps: {
+        borderColor: 'Danger.300',
+        glowColor: 'Danger.100',
+      },
+    },
+    disabled: {
+      inputProps: {
+        backgroundColor: 'Shading.150',
+      },
+    },
+    focused: {
+      inputProps: {
+        borderColor: 'Shading.400',
+        glowColor: 'Shading.150',
+      },
+    },
+  },
+}

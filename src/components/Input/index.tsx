@@ -20,10 +20,11 @@ import {
   getLineHeight,
   getUnitsAround,
   getRadius,
+  getBorder,
 } from '../../props'
 import { getUnitPadding } from '../../props/UnitsPadding'
 
-interface InputStateProps
+export interface InputStateProps
   extends UnitsAroundProps,
     ColorProps,
     FontProps,
@@ -32,7 +33,9 @@ interface InputStateProps
     LineHeightProps,
     RadiusProps,
     SizingProps,
-    UnitPaddingProps {}
+    UnitPaddingProps {
+  glowColor?: keyof DefaultTheme['colors']
+}
 
 interface BaseInputProps {
   ref?: Ref<HTMLInputElement>
@@ -44,7 +47,7 @@ export interface InputStyleProps extends InputStateProps {
 
 export type InputProps = BaseInputProps & HTMLProps<HTMLInputElement> & {}
 
-const getStyles = (props: InputStateProps = {}) => css`
+export const getInputStyle = (props: InputStateProps = {}) => css`
   ${getFont(props)}
   ${getColors(props)}
   ${getUnitsAround(props)}
@@ -53,16 +56,21 @@ const getStyles = (props: InputStateProps = {}) => css`
   ${getLineHeight(props)}
   ${getRadius(props)}
   ${getUnitPadding(props)}
+  ${getBorder(props)}
+  ${({ theme }) =>
+    props.glowColor
+      ? `box-shadow: 0 0 0 4px ${theme.colors[props.glowColor]};`
+      : ''}
 `
 
 const getStateStyles = (state?: string) => (
   props: InputStyleProps & ThemeProps<DefaultTheme>,
-) => getStyles({ ...props, ...(state ? props.states?.[state] : {}) })
+) => getInputStyle({ ...props, ...(state ? props.states?.[state] : {}) })
 
 export const Input = styled.input<InputProps & InputStyleProps>`
   display: flex;
   border: 1px solid transparent;
-  ${getStyles}
+  ${getInputStyle}
 
   ${({ states = {} }) =>
     Object.keys(states).map(
