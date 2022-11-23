@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import styled from 'styled-components'
 
 import { Box, BoxProps, BoxStyleProps } from '../Box'
@@ -10,7 +11,9 @@ import {
 export interface ColumnStyleProps
   extends VerticalAlignmentProps,
     HorizontalAlignmentProps,
-    BoxStyleProps {}
+    BoxStyleProps {
+  style?: Partial<CSSProperties>
+}
 
 export interface ColumnProps extends BoxProps {}
 

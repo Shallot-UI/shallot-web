@@ -1,4 +1,5 @@
 import React, {
+  CSSProperties,
   FunctionComponent,
   HTMLProps,
   useCallback,
@@ -28,7 +29,9 @@ interface ContainerStyleProps
     SizingProps,
     FlexProps,
     TransitionProps,
-    CursorProps {}
+    CursorProps {
+  style?: Partial<CSSProperties>
+}
 
 interface FormInputStateProps {
   containerProps?: ContainerStyleProps
@@ -42,6 +45,7 @@ export interface FormInputStyleProps
   extends FormInputStateProps,
     ContainerStyleProps {
   states?: { [stateName: string]: FormInputStateProps }
+  style?: Partial<CSSProperties>
 }
 
 export interface FormInputProps

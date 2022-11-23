@@ -1,4 +1,9 @@
-import React, { FunctionComponent, HTMLProps, ReactNode } from 'react'
+import React, {
+  CSSProperties,
+  FunctionComponent,
+  HTMLProps,
+  ReactNode,
+} from 'react'
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 import {
   UnitsAroundProps,
@@ -22,7 +27,9 @@ interface ContainerStyleProps
     SizingProps,
     FlexProps,
     TransitionProps,
-    CursorProps {}
+    CursorProps {
+  style?: Partial<CSSProperties>
+}
 
 interface ButtonStateProps {
   containerProps?: ContainerStyleProps
@@ -33,6 +40,7 @@ export interface ButtonStyleProps
   extends ButtonStateProps,
     ContainerStyleProps {
   states?: { [stateName: string]: ButtonStateProps }
+  style?: Partial<CSSProperties>
 }
 
 export interface ButtonProps

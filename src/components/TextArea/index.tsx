@@ -18,6 +18,7 @@ import {
   getUnitsAround,
   getRadius,
 } from '../../props'
+import { CSSProperties } from 'react'
 
 interface BaseTextAreaProps
   extends UnitsAroundProps,
@@ -26,7 +27,9 @@ interface BaseTextAreaProps
     CasingProps,
     FontSizeProps,
     LineHeightProps,
-    RadiusProps {}
+    RadiusProps {
+  style?: Partial<CSSProperties>
+}
 
 export const TextArea = styled.textarea<BaseTextAreaProps>`
   display: flex;

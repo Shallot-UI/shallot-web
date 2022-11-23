@@ -45,7 +45,9 @@ export interface TextStyleProps
     FlexProps,
     LetterSpacingProps,
     TransitionProps,
-    AnimationProps {}
+    AnimationProps {
+  style?: Partial<CSSProperties>
+}
 
 export interface TextProps {
   as?: keyof JSX.IntrinsicElements

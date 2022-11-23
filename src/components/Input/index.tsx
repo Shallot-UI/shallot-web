@@ -1,4 +1,4 @@
-import { HTMLProps, Ref } from 'react'
+import { CSSProperties, HTMLProps, Ref } from 'react'
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 import {
   UnitsAroundProps,
@@ -35,6 +35,7 @@ export interface InputStateProps
     SizingProps,
     UnitPaddingProps {
   glowColor?: keyof DefaultTheme['colors']
+  style?: Partial<CSSProperties>
 }
 
 interface BaseInputProps {
@@ -43,6 +44,7 @@ interface BaseInputProps {
 
 export interface InputStyleProps extends InputStateProps {
   states?: { [stateName: string]: InputStateProps }
+  style?: Partial<CSSProperties>
 }
 
 export type InputProps = BaseInputProps & HTMLProps<HTMLInputElement> & {}
