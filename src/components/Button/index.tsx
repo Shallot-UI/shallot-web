@@ -16,7 +16,7 @@ import {
   CursorProps,
 } from '@shallot-ui/theme'
 
-import { getSurfaceStyle } from '../Box'
+import { getBoxStyle } from '../Box'
 import { getTextStyle, TextProps, TextStyleProps } from '../Text'
 
 interface ContainerStyleProps
@@ -58,7 +58,7 @@ const Label = styled.span``
 const getStateStyles = (state?: string) => (
   props: ButtonStyleProps & ThemeProps<DefaultTheme>,
 ) => css`
-  ${getSurfaceStyle({
+  ${getBoxStyle({
     ...props?.containerProps,
     ...(state ? props.states?.[state]?.containerProps : {}),
   })}
@@ -73,7 +73,7 @@ const getStateStyles = (state?: string) => (
 const Container = styled.button<ButtonStyleProps>`
   border: none;
   display: inline-flex;
-  ${getSurfaceStyle}
+  ${getBoxStyle}
   ${getStateStyles()}
 
   ${({ states = {} }) =>

@@ -21,10 +21,12 @@ export const getColors = (colorProps: ColorProps) => ({
   const text = getColor(settings.textColor, theme)
   const background = getColor(settings.backgroundColor, theme)
   const border = getColor(settings.borderColor, theme)
+  const fill = getColor(settings.fillColor, theme)
 
   return `
     ${text ? `color: ${text};` : ''}
     ${background ? `background-color: ${background};` : ''}
     ${border ? `border-color: ${border};` : ''}
+    ${fill ? `fill: ${fill};` : ''}
   `
 }

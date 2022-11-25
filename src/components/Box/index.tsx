@@ -9,6 +9,7 @@ import {
   FlexProps,
   CursorProps,
   TransitionProps,
+  AnimationProps,
 } from '@shallot-ui/theme'
 
 import {
@@ -21,6 +22,7 @@ import {
   getElevation,
   getCursor,
 } from '../../props'
+import { getAnimation } from '../../props/Animation'
 
 type DivProps = HTMLProps<HTMLDivElement>
 
@@ -32,7 +34,8 @@ export interface BoxStyleProps
     SizingProps,
     FlexProps,
     CursorProps,
-    TransitionProps {
+    TransitionProps,
+    AnimationProps {
   style?: Partial<CSSProperties>
 }
 
@@ -42,9 +45,7 @@ export interface BoxProps {
   children?: ReactNode
 }
 
-export const getSurfaceStyle = (props: BoxStyleProps = {}) => css<
-  BoxStyleProps
->`
+export const getBoxStyle = (props: BoxStyleProps = {}) => css<BoxStyleProps>`
   display: flex;
   position: relative;
   border-style: solid;
@@ -56,8 +57,9 @@ export const getSurfaceStyle = (props: BoxStyleProps = {}) => css<
   ${getElevation(props)}
   ${getCursor(props)}
   ${getTransition(props)}
+  ${getAnimation(props)}
 `
 
 export const Box = styled.div<BoxStyleProps>`
-  ${getSurfaceStyle}
+  ${getBoxStyle}
 `

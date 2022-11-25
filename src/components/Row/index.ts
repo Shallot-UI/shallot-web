@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import { CSSProperties } from 'react'
+import styled, { css } from 'styled-components'
 import {
   VerticalAlignmentProps,
   HorizontalAlignmentProps,
 } from '@shallot-ui/theme'
 
-import { Box, BoxProps, BoxStyleProps } from '../Box'
+import { Box, BoxProps, BoxStyleProps, getBoxStyle } from '../Box'
 import { getHorizontalAlignment, getVerticalAlignment } from '../../props'
-import { CSSProperties } from 'react'
 
 export interface RowStyleProps
   extends VerticalAlignmentProps,
@@ -18,9 +18,14 @@ export interface RowStyleProps
 
 export interface RowProps extends BoxProps {}
 
-export const Row = styled(Box)<RowProps & RowStyleProps>`
+export const getRowStyle = (props: RowStyleProps) => css<RowStyleProps>`
   flex-direction: row;
   ${({ wrap }) => (wrap ? 'flex-wrap: wrap;' : '')}
-  ${getVerticalAlignment('row')}
-  ${getHorizontalAlignment('row')}
+  ${getBoxStyle(props)}
+  ${getVerticalAlignment('column')(props)}
+  ${getHorizontalAlignment('column')(props)}
+`
+
+export const Row = styled(Box)<RowProps & RowStyleProps>`
+  ${getRowStyle}
 `

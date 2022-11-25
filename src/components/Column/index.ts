@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { Box, BoxProps, BoxStyleProps } from '../Box'
+import { Box, BoxProps, BoxStyleProps, getBoxStyle } from '../Box'
 import { getHorizontalAlignment, getVerticalAlignment } from '../../props'
 import {
   HorizontalAlignmentProps,
@@ -17,9 +17,15 @@ export interface ColumnStyleProps
 
 export interface ColumnProps extends BoxProps {}
 
-export const Column = styled(Box)<ColumnProps & ColumnStyleProps>`
-  border-style: solid;
+export const getColumnStyle = (props: ColumnStyleProps) => css<
+  ColumnStyleProps
+>`
   flex-direction: column;
-  ${getVerticalAlignment('column')}
-  ${getHorizontalAlignment('column')}
+  ${getBoxStyle(props)}
+  ${getVerticalAlignment('column')(props)}
+  ${getHorizontalAlignment('column')(props)}
+`
+
+export const Column = styled(Box)<ColumnProps & ColumnStyleProps>`
+  ${getColumnStyle}
 `

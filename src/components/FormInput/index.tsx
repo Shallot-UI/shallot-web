@@ -17,7 +17,7 @@ import {
   CursorProps,
 } from '@shallot-ui/theme'
 
-import { getSurfaceStyle } from '../Box'
+import { getBoxStyle } from '../Box'
 import { getTextStyle, TextProps, TextStyleProps } from '../Text'
 import { getInputStyle, InputStateProps } from '../Input'
 
@@ -77,7 +77,7 @@ type FormInputState = 'disabled' | 'focused' | 'populated' | 'error'
 const getStateStyles = (state?: string) => (
   props: FormInputStyleProps & ThemeProps<DefaultTheme>,
 ) => css`
-  ${getSurfaceStyle({
+  ${getBoxStyle({
     ...props?.containerProps,
     ...(state ? props.states?.[state]?.containerProps : {}),
   })}
@@ -112,7 +112,7 @@ const Container = styled.div<
 >`
   display: flex;
   flex-direction: column;
-  ${getSurfaceStyle}
+  ${getBoxStyle}
   ${getStateStyles()}
 
   ${(props) => (props.disabled ? getStateStyles('disabled')(props) : '')}

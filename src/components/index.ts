@@ -1,5 +1,6 @@
 export * from './Button'
 export * from './Box'
+export * from './Checkbox'
 export * from './Column'
 export * from './Fold'
 export * from './FormInput'
