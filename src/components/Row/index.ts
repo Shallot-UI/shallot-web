@@ -22,8 +22,8 @@ export const getRowStyle = (props: RowStyleProps) => css<RowStyleProps>`
   flex-direction: row;
   ${({ wrap }) => (wrap ? 'flex-wrap: wrap;' : '')}
   ${getBoxStyle(props)}
-  ${getVerticalAlignment('column')(props)}
-  ${getHorizontalAlignment('column')(props)}
+  ${getVerticalAlignment('row')(props)}
+  ${getHorizontalAlignment('row')(props)}
 `
 
 export const Row = styled(Box)<RowProps & RowStyleProps>`
