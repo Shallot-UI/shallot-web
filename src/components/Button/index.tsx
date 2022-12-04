@@ -47,7 +47,7 @@ export interface ButtonProps
   extends Omit<TextProps, 'as'>,
     Omit<HTMLProps<HTMLButtonElement>, 'style' | 'height' | 'width'> {
   title: string
-  type: 'button' | 'submit' | 'reset' | undefined
+  type?: 'button' | 'submit' | 'reset' | undefined
 
   leftDecoration?: ReactNode
   rightDecoration?: ReactNode
