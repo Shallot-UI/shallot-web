@@ -15,7 +15,7 @@ export const formInputDefaultStyle: FormInputStyleProps = {
     textColor: 'Shading.500',
     backgroundColor: 'Shading.100',
     borderColor: 'Shading.250',
-    unitPadding: 1,
+    unitPadding: 3 / 4,
     radius: 'sm',
   },
   helperTextProps: {
