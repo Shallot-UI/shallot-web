@@ -1,10 +1,13 @@
 import { FormInputStyleProps } from '..'
 
 export const formInputDefaultStyle: FormInputStyleProps = {
+  fullWidth: true,
+  unitsAround: 1,
   labelProps: {
     textColor: 'Shading.400',
     letterSpacing: 'sm',
     font: 'Medium',
+    fontSize: 'sm',
     unitsBelow: 1,
   },
   inputProps: {
