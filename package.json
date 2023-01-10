@@ -23,7 +23,8 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "styled-components": ">=5"
+    "styled-components": ">=5",
+    "@shallot-ui/theme": "0.x"
   },
   "husky": {
     "hooks": {
@@ -45,6 +46,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.19.3",
+    "@shallot-ui/theme": "^0.1.10",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-info": "^5.3.21",
@@ -64,8 +66,5 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.8.4"
-  },
-  "dependencies": {
-    "@shallot-ui/theme": "^0.1.9"
   }
 }
