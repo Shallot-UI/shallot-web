@@ -43,7 +43,7 @@ export const formInputDefaultStyle: FormInputStyleProps = {
     },
     focused: {
       inputProps: {
-        borderColor: 'Shading.400',
+        borderColor: 'Primary.300',
         glowColor: 'Shading.150',
       },
     },

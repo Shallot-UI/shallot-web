@@ -1,4 +1,4 @@
-import { ComponentProps, CSSProperties, HTMLProps, Ref } from 'react'
+import { ComponentProps, CSSProperties } from 'react'
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 import {
   UnitsAroundProps,
@@ -75,7 +75,7 @@ const getStateStyles = (state?: string) => (
 
 export const Input = styled.input<InputStyleProps>`
   display: flex;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   ${(props) => getInputStyle({ ...inputDefaultStyle, ...props })}
 
   ${({ states = {} }) =>
