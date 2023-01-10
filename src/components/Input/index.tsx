@@ -10,6 +10,7 @@ import {
   RadiusProps,
   SizingProps,
   UnitPaddingProps,
+  BorderProps,
 } from '@shallot-ui/theme'
 
 import {
@@ -34,7 +35,8 @@ export interface InputStateProps
     LineHeightProps,
     RadiusProps,
     SizingProps,
-    UnitPaddingProps {
+    UnitPaddingProps,
+    BorderProps {
   glowColor?: keyof DefaultTheme['colors']
   style?: Partial<CSSProperties>
 }
