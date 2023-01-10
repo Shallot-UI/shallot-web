@@ -97,7 +97,13 @@ export const getLineHeight = ({
   fontSize,
 }: LineHeightProps = {}) => ({ theme }: { theme: DefaultTheme }) => {
   const { fontSizes, lineHeights, gridUnits, breakpoints } = theme
-  if (!lineHeight || !fontSize) return ''
+  if (!lineHeight) {
+    return ''
+  }
+  if (!fontSize) {
+    console.warn('a fontSize is required to calculate line-height')
+    return ''
+  }
   const ratio = lineHeights[lineHeight]
   const size = fontSizes[fontSize] as number | number[]
   return Array.isArray(size)

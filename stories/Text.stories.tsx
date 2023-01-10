@@ -36,6 +36,42 @@ const Template: Story<TextProps> = (args) => (
       <Text textColor="Primary.300" {...args} />
       <Text textColor="Primary.400" {...args} />
       <Text textColor="Primary.500" {...args} />
+      <Text lineHeight="sm" fontSize="md" unitsAbove={2}>
+        Nulla tempor feugiat dolor vulputate commodo. Phasellus consequat mauris
+        metus, placerat efficitur tortor imperdiet ut. Nam vitae congue ante.
+        Maecenas id est sit amet turpis scelerisque viverra eu a quam. Curabitur
+        nulla dui, feugiat eget lacus ut, laoreet bibendum velit. Vivamus
+        tincidunt, nisl eget commodo blandit, augue velit rhoncus justo, nec
+        porta massa risus at libero. In nisi est, ultricies ac velit ut,
+        dignissim ornare urna.
+      </Text>
+      <Text lineHeight="md" fontSize="md" unitsAbove={2}>
+        Nulla tempor feugiat dolor vulputate commodo. Phasellus consequat mauris
+        metus, placerat efficitur tortor imperdiet ut. Nam vitae congue ante.
+        Maecenas id est sit amet turpis scelerisque viverra eu a quam. Curabitur
+        nulla dui, feugiat eget lacus ut, laoreet bibendum velit. Vivamus
+        tincidunt, nisl eget commodo blandit, augue velit rhoncus justo, nec
+        porta massa risus at libero. In nisi est, ultricies ac velit ut,
+        dignissim ornare urna.
+      </Text>
+      <Text lineHeight="lg" fontSize="md" unitsAbove={2}>
+        Nulla tempor feugiat dolor vulputate commodo. Phasellus consequat mauris
+        metus, placerat efficitur tortor imperdiet ut. Nam vitae congue ante.
+        Maecenas id est sit amet turpis scelerisque viverra eu a quam. Curabitur
+        nulla dui, feugiat eget lacus ut, laoreet bibendum velit. Vivamus
+        tincidunt, nisl eget commodo blandit, augue velit rhoncus justo, nec
+        porta massa risus at libero. In nisi est, ultricies ac velit ut,
+        dignissim ornare urna.
+      </Text>
+      <Text lineHeight="xl" fontSize="md" unitsAbove={2}>
+        Nulla tempor feugiat dolor vulputate commodo. Phasellus consequat mauris
+        metus, placerat efficitur tortor imperdiet ut. Nam vitae congue ante.
+        Maecenas id est sit amet turpis scelerisque viverra eu a quam. Curabitur
+        nulla dui, feugiat eget lacus ut, laoreet bibendum velit. Vivamus
+        tincidunt, nisl eget commodo blandit, augue velit rhoncus justo, nec
+        porta massa risus at libero. In nisi est, ultricies ac velit ut,
+        dignissim ornare urna.
+      </Text>
     </Column>
   </ThemeProvider>
 )
