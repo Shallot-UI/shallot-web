@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLProps, Ref } from 'react'
+import { ComponentProps, CSSProperties, HTMLProps, Ref } from 'react'
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 import {
   UnitsAroundProps,
@@ -23,6 +23,7 @@ import {
   getBorder,
 } from '../../props'
 import { getUnitPadding } from '../../props/UnitsPadding'
+import { inputDefaultStyle } from './style'
 
 export interface InputStateProps
   extends UnitsAroundProps,
@@ -38,16 +39,10 @@ export interface InputStateProps
   style?: Partial<CSSProperties>
 }
 
-interface BaseInputProps {
-  ref?: Ref<HTMLInputElement>
-}
-
 export interface InputStyleProps extends InputStateProps {
   states?: { [stateName: string]: InputStateProps }
   style?: Partial<CSSProperties>
 }
-
-export type InputProps = BaseInputProps & HTMLProps<HTMLInputElement> & {}
 
 export const getInputStyle = (props: InputStateProps = {}) => css`
   ${getFont(props)}
@@ -63,16 +58,25 @@ export const getInputStyle = (props: InputStateProps = {}) => css`
     props.glowColor
       ? `box-shadow: 0 0 0 4px ${theme.colors[props.glowColor]};`
       : ''}
+  ${props.style}
 `
 
 const getStateStyles = (state?: string) => (
   props: InputStyleProps & ThemeProps<DefaultTheme>,
-) => getInputStyle({ ...props, ...(state ? props.states?.[state] : {}) })
+) =>
+  getInputStyle({
+    ...inputDefaultStyle,
+    ...props,
+    ...(state && {
+      ...inputDefaultStyle.states?.[state],
+      ...props.states?.[state],
+    }),
+  })
 
-export const Input = styled.input<InputProps & InputStyleProps>`
+export const Input = styled.input<InputStyleProps>`
   display: flex;
   border: 1px solid transparent;
-  ${getInputStyle}
+  ${(props) => getInputStyle({ ...inputDefaultStyle, ...props })}
 
   ${({ states = {} }) =>
     Object.keys(states).map(
@@ -80,6 +84,8 @@ export const Input = styled.input<InputProps & InputStyleProps>`
         &:${state} {
           ${getStateStyles(state)}
         };
-      `,
+        `,
     )}
 `
+
+export type InputProps = ComponentProps<typeof Input>

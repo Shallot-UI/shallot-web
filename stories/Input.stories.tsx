@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from '../src/globals'
 import { Fold, Input, InputProps } from '../src/components'
-import { defaultInputVariant } from './variants'
 
 const meta: Meta = {
   title: 'Input',
@@ -22,12 +21,7 @@ const Template: Story<InputProps> = (args) => (
   <ThemeProvider theme={DEFAULT_THEME}>
     <GlobalStyle />
     <Fold alignCenter alignMiddle backgroundColor="Shading.100">
-      <Input
-        {...defaultInputVariant}
-        unitsAround={1}
-        maxUnitWidth={40}
-        {...args}
-      />
+      <Input unitsAround={1} maxUnitWidth={40} {...args} />
     </Fold>
   </ThemeProvider>
 )

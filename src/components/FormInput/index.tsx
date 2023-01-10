@@ -20,6 +20,7 @@ import {
 import { getBoxStyle } from '../Box'
 import { getTextStyle, TextProps, TextStyleProps } from '../Text'
 import { getInputStyle, InputStateProps } from '../Input'
+import { formInputDefaultStyle } from './style'
 
 interface ContainerStyleProps
   extends UnitsAroundProps,
@@ -183,11 +184,27 @@ export const FormInput: FunctionComponent<FormInputProps &
       populated={Boolean(value)}
       error={Boolean(errorText)}
       states={states}
-      containerProps={containerProps}
-      labelProps={labelProps}
-      inputProps={inputProps}
-      errorTextProps={errorTextProps}
-      helperTextProps={helperTextProps}
+      {...formInputDefaultStyle}
+      containerProps={{
+        ...formInputDefaultStyle.containerProps,
+        ...containerProps,
+      }}
+      labelProps={{
+        ...formInputDefaultStyle.labelProps,
+        ...labelProps,
+      }}
+      inputProps={{
+        ...formInputDefaultStyle.inputProps,
+        ...inputProps,
+      }}
+      errorTextProps={{
+        ...formInputDefaultStyle.errorTextProps,
+        ...errorTextProps,
+      }}
+      helperTextProps={{
+        ...formInputDefaultStyle.helperTextProps,
+        ...helperTextProps,
+      }}
       // Container Style Props
       grow={grow}
       flex={flex}

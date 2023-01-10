@@ -30,6 +30,7 @@ import {
 } from '../../props'
 import { getAnimation } from '../../props/Animation'
 import { getColumnStyle } from '../Column'
+import { checkboxDefaultStyle } from './style'
 
 interface ContainerStyleProps
   extends UnitsAroundProps,
@@ -146,9 +147,19 @@ export const Checkbox: FunctionComponent<CheckboxProps &
   <Container
     onClick={() => setValue(!value)}
     states={states}
-    containerProps={containerProps}
-    fillProps={fillProps}
-    checkmarkProps={checkmarkProps}
+    {...checkboxDefaultStyle}
+    containerProps={{
+      ...checkboxDefaultStyle.containerProps,
+      ...containerProps,
+    }}
+    fillProps={{
+      ...checkboxDefaultStyle.fillProps,
+      ...fillProps,
+    }}
+    checkmarkProps={{
+      ...checkboxDefaultStyle.checkmarkProps,
+      ...checkmarkProps,
+    }}
   >
     <Input
       {...rest}

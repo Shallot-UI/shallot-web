@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from '../src/globals'
 import { Checkbox, CheckboxProps, Fold, Row, Text } from '../src/components'
-import { defaultCheckboxVariant } from './variants'
 
 const meta: Meta = {
   title: 'Checkbox',
@@ -25,12 +24,7 @@ const Template: Story<CheckboxProps> = (args) => {
       <GlobalStyle />
       <Fold alignCenter alignMiddle backgroundColor="Shading.100">
         <Row alignMiddle>
-          <Checkbox
-            {...defaultCheckboxVariant}
-            value={value}
-            setValue={setValue}
-            id="checkbox"
-          />
+          <Checkbox value={value} setValue={setValue} id="checkbox" />
           <Text
             as="label"
             htmlFor="checkbox"

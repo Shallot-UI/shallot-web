@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from '../src/globals'
 import { Column, Fold, FormInput, FormInputProps, Row } from '../src/components'
-import { defaultFormInputVariant } from './variants/FormInput'
 
 const meta: Meta = {
   title: 'Form Input',
@@ -22,7 +21,6 @@ const Form = () => (
   <Column grow alignCenter alignMiddle backgroundColor="Shading.100">
     <Column>
       <FormInput
-        {...defaultFormInputVariant}
         label="Email"
         helperText="This is my input"
         unitsBelow={2}
@@ -31,21 +29,18 @@ const Form = () => (
         errorText="Please enter a valid email address"
       />
       <FormInput
-        {...defaultFormInputVariant}
         label="Street Address"
         unitsBelow={2}
         placeholder="Enter your street address"
       />
       <Row unitsBelow={2}>
         <FormInput
-          {...defaultFormInputVariant}
           label="City"
           helperText="This is my input"
           unitsRight={1 / 2}
           placeholder="Enter your city"
         />
         <FormInput
-          {...defaultFormInputVariant}
           label="State / Province"
           helperText="This is my input"
           unitsLeft={1 / 2}
@@ -54,7 +49,6 @@ const Form = () => (
       </Row>
       <Row>
         <FormInput
-          {...defaultFormInputVariant}
           label="Country"
           helperText="This is my input"
           unitsRight={1 / 2}
@@ -63,7 +57,6 @@ const Form = () => (
           errorText="This field is required"
         />
         <FormInput
-          {...defaultFormInputVariant}
           label="Postal Code"
           helperText="This is my input"
           unitsLeft={1 / 2}

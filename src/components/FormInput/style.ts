@@ -1,6 +1,6 @@
-import { FormInputStyleProps } from '../../../src/components'
+import { FormInputStyleProps } from '..'
 
-export const defaultFormInputVariant: FormInputStyleProps = {
+export const formInputDefaultStyle: FormInputStyleProps = {
   labelProps: {
     textColor: 'Shading.400',
     letterSpacing: 'sm',
