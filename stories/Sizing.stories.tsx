@@ -37,6 +37,13 @@ const Template: Story = () => (
       unitsAround={1}
       radius="md"
     />
+    <Box
+      backgroundColor="Shading.150"
+      unitHeight={8}
+      unitsAround={1}
+      radius="md"
+      fullWidth
+    />
   </ThemeProvider>
 )
 
