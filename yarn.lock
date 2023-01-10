@@ -1735,10 +1735,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@shallot-ui/theme@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-0.1.10.tgz#40de92d0525ea79996c12fca5a0d1a69701f98db"
-  integrity sha512-DX4MW7qdZaMlqCItGt3LzLRN4G3DnqfxY5WO67u+0g82aKDR0bQQOlZqO288r4IhIVhXYjpZbhRhIOZzuhE7rQ==
+"@shallot-ui/theme@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-0.1.11.tgz#4ba2f3c97b7af12e2abba40a9fb53cbf1a87cef9"
+  integrity sha512-bN1eXJ/uAbfkhr4dkVej/VGhBOaVDd+ETQRnZlqBCqAg7N7W04aXZv63AKlqTZlY0N9IiWzL6FdmMZ820XtqsA==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.6"
