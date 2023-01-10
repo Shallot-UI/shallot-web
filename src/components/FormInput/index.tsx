@@ -60,7 +60,7 @@ export interface FormInputProps
 
 const Input = styled.input`
   display: flex;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   outline: none;
   transition: border-color 250ms ease-in-out, box-shadow 400ms ease-in-out;
 `

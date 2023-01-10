@@ -58,7 +58,7 @@ export const getInputStyle = (props: InputStateProps = {}) => css`
   ${getBorder(props)}
   ${({ theme }) =>
     props.glowColor
-      ? `box-shadow: 0 0 0 4px ${theme.colors[props.glowColor]};`
+      ? `box-shadow: 0 0 0 1px ${theme.colors[props.glowColor]};`
       : ''}
   ${props.style}
 `

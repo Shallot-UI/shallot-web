@@ -16,7 +16,6 @@ export const formInputDefaultStyle: FormInputStyleProps = {
     backgroundColor: 'Shading.100',
     borderColor: 'Shading.250',
     unitPadding: 1,
-    borderWidth: 2,
     radius: 'sm',
   },
   helperTextProps: {
@@ -34,7 +33,7 @@ export const formInputDefaultStyle: FormInputStyleProps = {
     error: {
       inputProps: {
         borderColor: 'Danger.300',
-        glowColor: 'Danger.100',
+        glowColor: 'Danger.300',
       },
     },
     disabled: {
@@ -45,7 +44,7 @@ export const formInputDefaultStyle: FormInputStyleProps = {
     focused: {
       inputProps: {
         borderColor: 'Primary.300',
-        glowColor: 'Shading.150',
+        glowColor: 'Primary.300',
       },
     },
   },
