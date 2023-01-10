@@ -1,5 +1,4 @@
 import { UnitsAroundProps } from '@shallot-ui/theme'
-import { css } from 'styled-components'
 
 export const getUnitsAround = ({
   fullWidth,
@@ -12,23 +11,17 @@ export const getUnitsAround = ({
 }: UnitsAroundProps) => {
   let styles = ''
   if (fullWidth) {
-    styles += css`
-      width: calc(
-        100% -
-          ${({ theme }) =>
-            theme.gridUnits[0] * (unitsLeft ?? unitsAround ?? 0) +
-            theme.gridUnits[0] * (unitsRight ?? unitsAround ?? 0)}px
-      );
+    styles += `
+      width: calc(100% -
+        ${12 * (unitsLeft ?? unitsAround ?? 0) +
+          12 * (unitsRight ?? unitsAround ?? 0)}px);
     `
   }
   if (fullHeight) {
-    styles += css`
-      height: calc(
-        100% -
-          ${({ theme }) =>
-            theme.gridUnits[0] * (unitsAbove ?? unitsAround ?? 0) +
-            theme.gridUnits[0] * (unitsBelow ?? unitsAround ?? 0)}px
-      );
+    styles += `
+      height: calc(100% -
+        ${12 * (unitsAbove ?? unitsAround ?? 0) +
+          12 * (unitsBelow ?? unitsAround ?? 0)}px);
     `
   }
   if (typeof unitsAround === 'number') {
